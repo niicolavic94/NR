@@ -1,0 +1,167 @@
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a img {
+    margin-right: 10px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about, .services, .portfolio, .contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about h2, .services h2, .portfolio h2, .contact h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about h2 img, .services h2 img, .portfolio h2 img, .contact h2 img {
+    margin-right: 10px;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.service-card img {
+    margin-right: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.portfolio-item {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact label {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.contact label img {
+    margin-right: 10px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.contact button {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+

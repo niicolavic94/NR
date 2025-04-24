@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Entreprise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-image: url('images/nini.avif');
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            background-size: cover; /* Pour que l'image couvre toute la section */
+            background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+            background-position: center; /* Pour centrer l'image */
+            color: white; /* Pour assurer la lisibilité du texte de navigation */
+        }
+
+        .logo img {
+            height: 150px;
+            width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        nav ul li a i {
+            margin-right: 10px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('images/nana.avif'); /* Utilisation de background-image */
+            color: #fff;
+            border-radius: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 60px; /* Marge standardisée */
+            margin-bottom: 60px; /* Marge standardisée */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #007BFF;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e0e0e0;
+            color: #ff0000;
+            transform: translateY(-2px);
+        }
+
+        .about, .services, .portfolio, .contact, .testimonials {
+            padding: 60px 20px; /* Padding vertical standardisé */
+            text-align: center;
+            margin-bottom: 60px; /* Marge inférieure standardisée */
+        }
+
+        .about h2, .services h2, .portfolio h2, .contact h2, .testimonials h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about h2 i, .services h2 i, .portfolio h2 i, .contact h2 i, .testimonials h2 i {
+            margin-right: 10px;
+        }
+
+        .about-card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .about-card img {
+            height: auto; /* Adaptation de la hauteur */
+            max-width: 300px; /* Adaptation de la largeur */
+            border-radius: 20px; /* Bordures arrondies à 20px */
+            margin-right: 20px;
+        }
+
+        .about-card .description {
+            flex: 1;
+        }
+
+        .about-card .description p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .about-card .description .social-links a {
+            margin: 0 5px;
+            font-size: 1.5em;
+            color: #007BFF;
+        }
+
+        .services {
+            border-radius: 20px;
+            background-image: url('images/nono.avif');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .services h2 {
+            color: white;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 10px;
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item {
+            display: inline-block;
+            width: calc(33% - 2%); /* Ajustement pour les marges */
+            margin: 1%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 10px;
+            display: block; /* Empêche l'espace supplémentaire sous l'image */
+            height: auto; /* Garde le ratio aspect */
+        }
+        .contact {
+            border-radius: 20px;
+            padding: 60px 20px;
+            text-align: center;
+            background-image: url('images/nene.avif'); /* Remplacez par le chemin de votre image */
+            background-size: cover; /* Pour que l'image couvre toute la section */
+            background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+            background-position: center; /* Pour centrer l'image */
+            color: #fff; /* Optionnel: changez la couleur du texte si l'image rend la lecture difficile */
+        }
+
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .contact label {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            color: white; /* Assurer la visibilité du label */
+        }
+
+        .contact label i {
+            margin-right: 10px;
+            color: white; /* Assurer la visibilité de l'icône */
+        }
+
+        .contact input, .contact textarea {
+            padding: 10px;
+            border: 1px solid #ccc; /* Ajout d'une bordure pour l'accessibilité */
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 5px #d1d9e6, inset -5px -5px 10px #ffffff;
+            transition: box-shadow 0.3s ease;
+            color: #333; /* Force la couleur du texte à noir */
+        }
+
+        .contact input:focus, .contact textarea:focus {
+            box-shadow: inset 1px 1px 2px #d1d9e6, inset -1px -1px 2px #ffffff;
+            outline: none;
+            border-color: #007BFF; /* Indication visuelle du focus */
+        }
+
+        .contact button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Indiquer que c'est un élément interactif */
+        }
+
+        .contact button:hover {
+            background-color: #0056b3;
+            box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Ajout d'une marge en bas du footer pour l'espacement */
+        }
+
+        footer .social-links a {
+            font-size: 2em;
+            margin: 0 10px;
+            color: #007BFF;
+        }
+
+        /* Ajout de styles pour l'accessibilité */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid #007BFF;
+            outline-offset: 2px;
+        }
+
+        /* Correction pour les écrans plus petits (cohérence des marges) */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .hero {
+                padding: 60px 10px;
+                margin-top: 30px; /* Ajustement des marges pour les petits écrans */
+                margin-bottom: 30px; /* Ajustement des marges pour les petits écrans */
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .about, .services, .portfolio, .contact, .testimonials {
+                padding: 30px 10px; /* Ajustement du padding vertical */
+                margin-bottom: 30px; /* Ajustement des marges pour les petits écrans */
+            }
+
+            .about h2, .services h2, .portfolio h2, .contact h2, .testimonials h2 {
+                font-size: 2em;
+            }
+
+            .about-card {
+                flex-direction: column;
+                text-align: center;
+                width: 95%; /* Prend plus de largeur sur les petits écrans */
+            }
+
+            .about-card img {
+                margin-bottom: 20px;
+                max-width: 100%; /* L'image prend toute la largeur disponible */
+                height: auto;
+            }
+
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-card {
+                width: 95%;
+            }
+
+            .portfolio-item {
+                width: calc(50% - 2%); /* Deux éléments par ligne sur les petits écrans */
+            }
+
+            .contact form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="/images/RN1.png" alt="Logo NR WEB">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-user"></i>À Propos</a></li>
+                    <li><a href="#services"><i class="fas fa-star"></i>Services</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-heart"></i>Portfolio</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-comments"></i>Témoignages</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Bienvenue chez NR WEB</h1>
+            <p>Développeur Web et Mobile</p>
+            <a href="#contact" class="cta-button">Contactez-nous</a>
+        </section>
+
+        <section id="about" class="about">
+            <h2><i class="fas fa-user"></i> À Propos de Moi</h2>
+            <div class="about-card">
+                <img src="images/costard.jpg" alt="Photo de Nicolas">
+                <div class="description">
+                    <p>Fraichement diplômé d'un Bac +2 Développeur Web et Web Mobile au Pôle Numérique de l'ADRAR de Ramonville Saint-Agne (31), je suis à la recherche d'une alternance en Développement Web ou Cybersécurité
+                        et je souhaite proposer mes services à des futurs clients dans la réalisation de leur site web.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2><i class="fas fa-star"></i> Nos Services</h2>
+            <div class="service-card">
+                <i class="fas fa-globe"></i>
+                <h3>Développement Web</h3>
+                <p>Création de sites web modernes et responsives.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Développement Mobile</h3>
+                <p>Développement d'applications mobiles pour iOS et Android.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Design UI/UX</h3>
+                <p>Conception d'interfaces utilisateur intuitives et attrayantes.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2><i class="fas fa-heart"></i> Notre Portfolio</h2>
+            <div class="portfolio-item">
+                <img src="path_to_your_project1.png" alt="Projet 1">
+                <p>Projet 1</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="path_to_your_project2.png" alt="Projet 2">
+                <p>Projet 2</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="path_to_your_project3.png" alt="Projet 3">
+                <p>Projet 3</p>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2><i class="fas fa-comments"></i> Témoignages</h2>
+            <div class="testimonial-item">
+                <p>"Excellent travail ! Très professionnel et réactif."</p>
+                <p>- Client Satisfait</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"NR WEB a réalisé un site web parfait pour mon entreprise."</p>
+                <p>- Autre Client Satisfait</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2><i class="fas fa-envelope"></i> Contactez-nous</h2>
+            <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+                <label for="name"><i class="fas fa-user"></i> Nom:</label>
+                <input type="text" id="name" name="name" required pattern="^[a-zA-Z\s]+$" title="Veuillez entrer uniquement des lettres et des espaces.">
+                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Veuillez entrer une adresse email valide.">
+                <label for="phone"><i class="fas fa-phone"></i> Téléphone:</label>
+                <input type="tel" id="phone" name="phone" pattern="^[0-9\s\+\-\(\)]+$" title="Veuillez entrer un numéro de téléphone valide.">
+                <label for="message"><i class="fas fa-comment"></i> Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="cta-button">Envoyer</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 NR WEB. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+     function validateForm() {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+
+    // Validation stricte du nom (lettres, espaces, tirets, accents)
+    if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s-]+$/.test(nameInput.value.trim())) {
+        alert("Veuillez entrer un nom valide (lettres, espaces, tirets, accents).");
+        nameInput.focus();
+        return false;
+    }
+
+    // Validation stricte de l'email
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(emailInput.value.trim())) {
+        alert("Veuillez entrer une adresse email valide.");
+        emailInput.focus();
+        return false;
+    }
+
+    // Validation du téléphone (chiffres, espaces, +, -, (), .) - moins stricte pour la variété des formats
+    if (phoneInput.value.trim() && !/^[0-9\s\+\-\(\)\.]+$/.test(phoneInput.value.trim())) {
+        alert("Veuillez entrer un numéro de téléphone valide.");
+        phoneInput.focus();
+        return false;
+    }
+
+    // Nettoyage basique du message côté client pour réduire les risques XSS (sera renforcé côté serveur)
+    messageInput.value = messageInput.value.trim();
+    // Suppression des balises HTML potentiellement dangereuses (approche très basique - NE PAS S'Y FIER CÔTÉ SERVEUR)
+    const tempElement = document.createElement('div');
+    tempElement.textContent = messageInput.value;
+    messageInput.value = tempElement.innerHTML; // Encode les caractères HTML spéciaux
+
+    return true;
+}
+    </script>
+</body>
+</html>
