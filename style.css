@@ -106,8 +106,8 @@ body {
   }
 
   .cta-button:hover {
-    background-color: #e0e0e0;
-    color: #ff0000;
+    background-color: #007BFF;
+    color: #fff;
     transform: translateY(-2px);
   }
 
@@ -182,7 +182,7 @@ body {
   
 
   .about-social-links a:hover, .language-icons a:hover {
-    color: #0056b3; /* Couleur des icônes au survol */
+    color: black; /* Couleur des icônes au survol */
   }
 
   .services {
@@ -246,7 +246,7 @@ body {
   }
 
   .portfolio-link:hover {
-    background-color: #0056b3;
+    background-color: black;
   }
 
   .portfolio-link i {
@@ -312,7 +312,7 @@ body {
   }
 
   .contact button:hover {
-    background-color: #0056b3;
+    background-color: black;
     box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
   }
 
@@ -326,6 +326,11 @@ body {
   }
 
   footer .social-links a {
+    font-size: 3em; /* Augmenter la taille des icônes sociales */
+    margin: 0 10px;
+    color: black;
+  }
+  footer .social-links a:hover {
     font-size: 3em; /* Augmenter la taille des icônes sociales */
     margin: 0 10px;
     color: #007BFF;
