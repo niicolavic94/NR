@@ -1,569 +1,189 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votre Entreprise</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-image: url('images/nini.avif');
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: white;
-        }
-
-        .logo img {
-            height: 150px;
-            width: 150px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            background-color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #007BFF;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        nav ul li a i {
-            margin-right: 10px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background-image: url('images/NANA.avif');
-            color: #fff;
-            border-radius: 20px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 60px;
-            margin-bottom: 60px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        .about {
-            text-align: center;
-            padding: 100px 20px;
-            background-image: url('images/NANA.avif');
-            color: BLACK;
-            border-radius: 20px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 60px;
-            margin-bottom: 60px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #007BFF;
-            text-decoration: none;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #e0e0e0;
-            color: #ff0000;
-            transform: translateY(-2px);
-        }
-
-        .about, .services, .portfolio, .contact, .testimonials {
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .about h2, .services h2, .portfolio h2, .contact h2, .testimonials h2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .about h2 i, .services h2 i, .portfolio h2 i, .contact h2 i, .testimonials h2 i {
-            margin-right: 10px;
-        }
-
-        .about-card {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
-            margin: 20px auto;
-            width: 80%;
-            gap: 20px;
-        }
-
-        .about-image img {
-            max-width: 200px;
-            border-radius: 20px;
-        }
-
-        .about-details {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .about-details p {
-            font-size: 1.1em;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .about-details .social-links a {
-      
-            margin: 0 10px;
-            font-size: 2.5em;
-            color: #007BFF;
-            transition: color 0.3s ease;
-        }
-
-        .about-details .social-links a:hover {
-            color: #0056b3;
-        }
-
-        .services {
-            background-image: url('images/nini.avif');
-            border-radius: 20px;
-        }
-
-        .services h2, .about h2{
-            color: white;
-        }
-
-        .services-container, .portfolio-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .service-card, .portfolio-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: calc(33.333% - 40px);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover, .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 20px #d1d9e6, -10px -10px 20px #ffffff;
-        }
-
-        .service-card i, .portfolio-item img {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .service-content h3, .portfolio-content h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .service-content p, .portfolio-content p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-
-        .portfolio-link {
-            display: inline-flex;
-            align-items: center;
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .portfolio-link:hover {
-            background-color: #0056b3;
-        }
-
-        .portfolio-link i {
-            margin-right: 8px;
-        }
-
-        .contact {
-            border-radius: 20px;
-            padding: 60px 20px;
-            text-align: center;
-            background-image: url('images/NENE.avif');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: #fff;
-        }
-
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 60%;
-            margin: 0 auto;
-        }
-
-        .contact label {
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
-            color: white;
-        }
-
-        .contact label i {
-            margin-right: 10px;
-            color: white;
-        }
-
-        .contact input, .contact textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: inset 2px 2px 5px #d1d9e6, inset -5px -5px 10px #ffffff;
-            transition: box-shadow 0.3s ease;
-            color: #333;
-        }
-
-        .contact input:focus, .contact textarea:focus {
-            box-shadow: inset 1px 1px 2px #d1d9e6, inset -1px -1px 2px #ffffff;
-            outline: none;
-            border-color: #007BFF;
-        }
-
-        .contact button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .contact button:hover {
-            background-color: #0056b3;
-            box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        footer .social-links a {
-            font-size: 2em;
-            margin: 0 10px;
-            color: #007BFF;
-        }
-
-        a:focus, button:focus, input:focus, textarea:focus {
-            outline: 2px solid #007BFF;
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 1000px) {
-            .service-card, .portfolio-item {
-                width: calc(50% - 40px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-
-            .hero {
-                padding: 60px 10px;
-                margin-top: 30px;
-                margin-bottom: 30px;
-            }
-
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            .about, .services, .portfolio, .contact, .testimonials {
-                padding: 30px 10px;
-                margin-bottom: 30px;
-            }
-
-            .about h2, .services h2, .portfolio h2, .contact h2, .testimonials h2 {
-                font-size: 2em;
-            }
-
-            .about-card {
-                flex-direction: column;
-                text-align: center;
-                width: 95%;
-            }
-
-            .about-image img {
-                margin-bottom: 20px;
-                max-width: 100%;
-                height: auto;
-            }
-
-            .service-card, .portfolio-item {
-                width: 100%;
-            }
-
-            .contact form {
-                width: 90%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre Entreprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="/images/RN1.png" alt="Logo NR WEB">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about"><i class="fas fa-user"></i>À Propos</a></li>
-                    <li><a href="#services"><i class="fas fa-star"></i>Services</a></li>
-                    <li><a href="#portfolio"><i class="fas fa-heart"></i>Portfolio</a></li>
-                    <li><a href="#testimonials"><i class="fas fa-comments"></i>Témoignages</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="/images/RN1.png" alt="Logo NR WEB">
+      </div>
+      <i class="fas fa-bars burger-menu-icon" onclick="toggleMenu()"></i>
+      <nav>
+        <ul>
+          <li><a href="#about"><i class="fas fa-user"></i>À Propos</a></li>
+          <li><a href="#services"><i class="fas fa-star"></i>Services</a></li>
+          <li><a href="#portfolio"><i class="fas fa-heart"></i>Portfolio</a></li>
+          <li><a href="#testimonials"><i class="fas fa-comments"></i>Témoignages</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <section class="hero">
-            <h1>Bienvenue sur mon portfolio</h1>
-            <p>Développeur Web et Mobile</p>
-            <a href="#contact" class="cta-button">Contactez-moi</a>
-        </section>
+    <section class="hero">
+      <h1>Bienvenue sur mon portfolio</h1>
+      <p>Développeur Web et Mobile</p>
+      <a href="#contact" class="cta-button">Contactez-moi</a>
+    </section>
 
-        <section id="about" class="about">
-            <h2><i class="fas fa-user"></i> À Propos de Moi</h2>
-            <div class="about-card">
-                <div class="about-image">
-                    <img src="images/costard.jpg" alt="Photo de Nicolas">
-                </div>
-                <div class="about-details">
-                    <p><strong>Nom:</strong> Nicolas Redon</p>
-                    <p><strong>Formation:</strong> Bac +2 Développeur Web et Web Mobile</p>
-                    <p><strong>Compétences:</strong> HTML, CSS, JavaScript, Bootstrap</p>
-                    <p><strong>Objectif:</strong> Recherche d'une alternance en Développement Web ou Cybersécurité</p>
-                    <p><strong>Services:</strong> Réalisation de sites web modernes et responsives</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/nredon31/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:nicoredon94@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://github.com/niicolavic94" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="about" class="about">
+      <h2><i class="fas fa-user"></i> À Propos de Moi</h2>
+      <div class="about-card">
+        <img src="images/costard.jpg" alt="Photo de Nicolas">
+        <div class="description">
+          <p>Fraîchement diplômé d'un Bac +2 Développeur Web et Web Mobile au Pôle Numérique de l'ADRAR de Ramonville Saint-Agne (31), je suis à la recherche d'une alternance en Développement Web ou Cybersécurité.</p>
+          <p>Je maîtrise les langages :</p>
+          <div class="language-icons">
+            <a href="#" aria-label="HTML"><i class="fab fa-html5"></i></a>
+            <a href="#" aria-label="CSS"><i class="fab fa-css3-alt"></i></a>
+            <a href="#" aria-label="JavaScript"><i class="fab fa-js"></i></a>
+            <a href="#" aria-label="Bootstrap"><i class="fab fa-bootstrap"></i></a>
+          </div>
+          <p>Je suis prêt à m'investir et à apprendre tout type de framework ou langage pour répondre aux besoins de vos projets.</p>
+          <p>En parallèle, je propose mes services pour la réalisation de sites web sur mon temps libre. N'hésitez pas à me contacter pour discuter de vos projets.</p>
+          <div class="social-links about-social-links">
+            <a href="https://www.linkedin.com/in/nredon31/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:nicoredon94@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/niicolavic94" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="services" class="services">
-            <h2><i class="fas fa-star"></i> Mes Services</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <i class="fas fa-globe"></i>
-                    <div class="service-content">
-                        <h3>Développement Web</h3>
-                        <p>Création de sites web modernes et responsives.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <div class="service-content">
-                        <h3>Développement Mobile</h3>
-                        <p>Développement d'applications mobiles pour iOS et Android.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <div class="service-content">
-                        <h3>Design UI/UX</h3>
-                        <p>Conception d'interfaces utilisateur intuitives et attrayantes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="services" class="services">
+      <h2><i class="fas fa-star"></i> Mes Services</h2>
+      <div class="services-container">
+        <div class="service-card">
+          <i class="fas fa-globe"></i>
+          <div class="service-content">
+            <h3>Développement Web</h3>
+            <p>Création de sites web modernes et responsives.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <div class="service-content">
+            <h3>Développement Mobile</h3>
+            <p>Développement d'applications mobiles pour iOS et Android.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-paint-brush"></i>
+          <div class="service-content">
+            <h3>Design UI/UX</h3>
+            <p>Conception d'interfaces utilisateur intuitives et attrayantes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="portfolio" class="portfolio">
-            <h2><i class="fas fa-heart"></i> Mon Portfolio</h2>
-            <div class="portfolio-container">
-                <div class="portfolio-item">
-                    <img src="images/chelsea.png" alt="Projet Mémoire">
-                    <div class="portfolio-content">
-                        <h3>Projet Mémoire</h3>
-                        <p>Site web sur Chelsea FC réalisé au cours de ma formation.</p>
-                        <a href="https://niicolavic94.github.io/memoire" target="_blank" class="portfolio-link">
-                            <i class="fas fa-code"></i> Voir le code
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/prono.PNG" alt="Projet Prono">
-                    <div class="portfolio-content">
-                        <h3>Projet Prono</h3>
-                        <p>API de pronostic réalisée sur Firebase (noSQL).</p>
-                        <a href="https://niicolavic94.github.io/Prono" target="_blank" class="portfolio-link">
-                            <i class="fas fa-code"></i> Voir le code
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="path_to_your_project3.png" alt="Projet en cours">
-                    <div class="portfolio-content">
-                        <h3>Projet en cours</h3>
-                        <p>Refonte d'un site pour une cliente.</p>
-                        <a href="https://niicolavic94.github.io/Prono" target="_blank" class="portfolio-link">
-                            <i class="fas fa-code"></i> Voir le code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="portfolio" class="portfolio">
+      <h2><i class="fas fa-heart"></i> Mon Portfolio</h2>
+      <div class="portfolio-container">
+        <div class="portfolio-item">
+          <img src="images/chelsea.png" alt="Projet Mémoire">
+          <div class="portfolio-content">
+            <h3>Projet Mémoire</h3>
+            <p>Site web sur Chelsea FC réalisé au cours de ma formation.</p>
+            <a href="https://niicolavic94.github.io/memoire" target="_blank" class="portfolio-link">
+              <i class="fas fa-code"></i> Voir le code
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/prono.PNG" alt="Projet Prono">
+          <div class="portfolio-content">
+            <h3>Projet Prono</h3>
+            <p>API de pronostic réalisée sur Firebase (noSQL).</p>
+            <a href="https://niicolavic94.github.io/Prono" target="_blank" class="portfolio-link">
+              <i class="fas fa-code"></i> Voir le code
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="path_to_your_project3.png" alt="Projet en cours">
+          <div class="portfolio-content">
+            <h3>Projet en cours</h3>
+            <p>Refonte d'un site pour une cliente.</p>
+            <a href="https://niicolavic94.github.io/Prono" target="_blank" class="portfolio-link">
+              <i class="fas fa-code"></i> Voir le code
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="testimonials" class="testimonials">
-            <h2><i class="fas fa-comments"></i> Témoignages</h2>
-        </section>
+    <section id="testimonials" class="testimonials">
+      <h2><i class="fas fa-comments"></i> Témoignages</h2>
+    </section>
 
-        <section id="contact" class="contact">
-            <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
-            <form action="submit_form.php" method="post" onsubmit="return validateForm()">
-                <label for="name"><i class="fas fa-user"></i> Nom:</label>
-                <input type="text" id="name" name="name" required pattern="^[a-zA-Z\s]+$" title="Veuillez entrer uniquement des lettres et des espaces.">
-                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-                <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Veuillez entrer une adresse email valide.">
-                <label for="phone"><i class="fas fa-phone"></i> Téléphone:</label>
-                <input type="tel" id="phone" name="phone" pattern="^[0-9\s\+\-\(\)]+$" title="Veuillez entrer un numéro de téléphone valide.">
-                <label for="message"><i class="fas fa-comment"></i> Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit" class="cta-button">Envoyer</button>
-            </form>
-        </section>
+    <section id="contact" class="contact">
+      <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
+      <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+        <label for="name"><i class="fas fa-user"></i> Nom:</label>
+        <input type="text" id="name" name="name" required pattern="^[a-zA-Z\s]+$" title="Veuillez entrer uniquement des lettres et des espaces.">
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+        <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Veuillez entrer une adresse email valide.">
+        <label for="phone"><i class="fas fa-phone"></i> Téléphone:</label>
+        <input type="tel" id="phone" name="phone" pattern="^[0-9\s\+\-\(\)]+$" title="Veuillez entrer un numéro de téléphone valide.">
+        <label for="message"><i class="fas fa-comment"></i> Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" class="cta-button">Envoyer</button>
+      </form>
+    </section>
 
-        <footer>
-            <p>&copy; 2025 NR WEB. Tous droits réservés.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/nredon31/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:nicoredon94@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/niicolavic94" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-        </footer>
-    </div>
+    <footer>
+      <p>&copy; 2025 NR WEB. Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/nredon31/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:nicoredon94@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/niicolavic94" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </footer>
+  </div>
 
-    <script>
-        function validateForm() {
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const phoneInput = document.getElementById('phone');
-            const messageInput = document.getElementById('message');
+  <script>
+    function validateForm() {
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      const messageInput = document.getElementById('message');
 
-            if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s-]+$/.test(nameInput.value.trim())) {
-                alert("Veuillez entrer un nom valide (lettres, espaces, tirets, accents).");
-                nameInput.focus();
-                return false;
-            }
+      if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s-]+$/.test(nameInput.value.trim())) {
+        alert("Veuillez entrer un nom valide (lettres, espaces, tirets, accents).");
+        nameInput.focus();
+        return false;
+      }
 
-            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(emailInput.value.trim())) {
-                alert("Veuillez entrer une adresse email valide.");
-                emailInput.focus();
-                return false;
-            }
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(emailInput.value.trim())) {
+        alert("Veuillez entrer une adresse email valide.");
+        emailInput.focus();
+        return false;
+      }
 
-            if (phoneInput.value.trim() && !/^[0-9\s\+\-\(\)]+$/.test(phoneInput.value.trim())) {
-                alert("Veuillez entrer un numéro de téléphone valide.");
-                phoneInput.focus();
-                return false;
-            }
+      if (phoneInput.value.trim() && !/^[0-9\s\+\-\(\)]+$/.test(phoneInput.value.trim())) {
+        alert("Veuillez entrer un numéro de téléphone valide.");
+        phoneInput.focus();
+        return false;
+      }
 
-            messageInput.value = messageInput.value.trim();
-            const tempElement = document.createElement('div');
-            tempElement.textContent = messageInput.value;
-            messageInput.value = tempElement.innerHTML;
+      messageInput.value = messageInput.value.trim();
+      const tempElement = document.createElement('div');
+      tempElement.textContent = messageInput.value;
+      messageInput.value = tempElement.innerHTML;
 
-            return true;
-        }
-    </script>
+      return true;
+    }
+
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
