@@ -156,8 +156,9 @@ body {
   }
 
   .about-card .description p, .description li {
-    text-align: left;
+    text-align: center;
     margin: 15px 0;
+    font-size: 1.1em;
   }
 
   .about-card .description .social-links a {
