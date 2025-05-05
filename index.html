@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Votre Entreprise</title>
+  <meta name="description" content="Portfolio de Nicolas, développeur web et mobile. Découvrez mes projets, services et contactez-moi pour vos besoins en développement web.">
+  <meta name="keywords" content="Développeur web, Développeur mobile, Portfolio, Services web, Design UI/UX">
+  <meta name="author" content="Nicolas Redon">
+  <meta property="og:title" content="Mon portfolio">
+  <meta property="og:description" content="Portfolio de Nicolas, développeur web et mobile. Découvrez mes projets, services et contactez-moi pour vos besoins en développement web.">
+  <meta property="og:image" content="images/RN1.png">
+  <meta property="og:url" content="https://www.votre-site.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <title>Mon portfolio</title>
 </head>
 <body>
   <div class="container">
@@ -13,8 +22,10 @@
       <div class="logo">
         <img src="images/RN1.png" alt="Logo NR WEB">
       </div>
-      <i class="fas fa-bars burger-menu-icon" onclick="toggleMenu()"></i>
-      <nav>
+      <button class="burger-menu-icon" aria-label="Menu" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav aria-label="Menu principal">
         <ul>
           <li><a href="#about"><i class="fas fa-user"></i>À Propos</a></li>
           <li><a href="#services"><i class="fas fa-star"></i>Services</a></li>
@@ -28,7 +39,7 @@
     <section class="hero">
       <h1>Bienvenue sur mon portfolio</h1>
       <p>Développeur Web et Mobile</p>
-      <a href="#contact" class="cta-button">Contactez-moi</a>
+      <a href="mailto:nicoredon94@gmail.com?subject=Contact%20via%20portfolio&body=Bonjour%20Nicolas," class="cta-button">Contactez-moi</a>
     </section>
 
     <section id="about" class="about">
@@ -124,7 +135,7 @@
 
     <section id="contact" class="contact">
       <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
-      <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+      <form onsubmit="return validateForm()">
         <label for="name"><i class="fas fa-user"></i> Nom:</label>
         <input type="text" id="name" name="name" required pattern="^[a-zA-Z\s]+$" title="Veuillez entrer uniquement des lettres et des espaces.">
         <label for="email"><i class="fas fa-envelope"></i> Email:</label>
@@ -135,6 +146,7 @@
         <textarea id="message" name="message" required></textarea>
         <button type="submit" class="cta-button">Envoyer</button>
       </form>
+      <p>Ou envoyez un email directement à : <a href="mailto:nicoredon94@gmail.com?subject=Contact%20via%20portfolio&body=Bonjour%20Nicolas,">nicoredon94@gmail.com</a></p>
     </section>
 
     <footer>
@@ -177,7 +189,8 @@
       tempElement.textContent = messageInput.value;
       messageInput.value = tempElement.innerHTML;
 
-      return true;
+      alert("Veuillez envoyer un email à nicoredon94@gmail.com avec les informations suivantes :\n\nNom: " + nameInput.value + "\nEmail: " + emailInput.value + "\nTéléphone: " + phoneInput.value + "\nMessage: " + messageInput.value);
+      return false;
     }
 
     function toggleMenu() {
